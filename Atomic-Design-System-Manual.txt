@@ -1,0 +1,94 @@
+ATOMIC DESIGN SYSTEM MANUAL
+Pangasinan Heritage Digital Showcase
+Activity 1.2
+
+Design principles
+- Mobile-first and responsive
+- Semantic HTML and keyboard accessibility
+- Clear hierarchy and readable contrast
+- Reusable, composable React components
+- Minimal dependencies
+- Static-first deployment
+
+ATOMS
+
+1. Button
+Visual preview: Rounded primary and outlined actions are visible in the hero and card components.
+Usage: Use for navigation or clear calls to action. The component accepts children, href, and variant.
+Responsive logic: Inline-flex sizing remains touch-friendly; action groups wrap on small screens.
+Code reference: source-code/components/Button.tsx
+
+2. Typography
+Visual preview: Serif display headings pair with a compact sans-serif interface type.
+Usage: Use the display face for major section headings and the sans-serif face for body/UI text.
+Responsive logic: clamp() scales major headings between mobile and desktop.
+Code reference: source-code/app/globals.css
+
+3. Color Tokens
+Primary: #17332d (deep green)
+Secondary/accent: #bd633e (terracotta)
+Surface: #f7f3eb (warm neutral)
+Supporting: #53766a and #87aaa0
+Usage: Keep the palette consistent across navigation, cards, actions and sections.
+Code reference: source-code/app/globals.css
+
+4. Icon
+Visual preview: The PH circular brand mark functions as a simple text-based brand icon.
+Usage: Use for brand identification; avoid decorative icons when they do not add meaning.
+Responsive logic: Fixed 38px mark remains readable across breakpoints.
+Code reference: source-code/components/Header.tsx
+
+5. Image
+Visual preview: Heritage cards use large landscape images with descriptive alt text.
+Usage: Use for destination previews and always provide meaningful alternative text.
+Responsive logic: Images fill the card width and use object-fit: cover.
+Code reference: source-code/components/HeritageCard.tsx
+
+MOLECULES
+
+6. Heritage Card
+Visual preview: Three cards appear in the Heritage Grid on desktop and stack on mobile.
+Usage: Exclusively for displaying tourist-site previews.
+Responsive logic: Three columns desktop, two columns tablet, one column mobile. Image height is reduced/controlled for consistent cards.
+Code reference: source-code/components/HeritageCard.tsx
+
+7. Search Form
+Visual preview: Search input and action appear above the heritage grid.
+Usage: Use when visitors need to locate a destination or category.
+Responsive logic: Input and button are inline on larger screens and stack vertically below 800px.
+Code reference: source-code/components/SearchForm.tsx
+
+8. Navigation Item
+Visual preview: Header links provide Heritage, About, and Plan a Visit navigation.
+Usage: Use for top-level destinations within the showcase.
+Responsive logic: Navigation is visible on larger screens and intentionally hidden at small widths to keep the header compact.
+Code reference: source-code/components/Header.tsx
+
+ORGANISMS
+
+9. Heritage Grid
+Visual preview: A responsive collection of Heritage Cards.
+Usage: Use for grouped destination previews.
+Responsive logic: CSS grid changes from three columns to two and then one based on viewport width.
+Code reference: source-code/components/HeritageGrid.tsx
+
+10. Header Navigation
+Visual preview: Sticky header with brand and navigation.
+Usage: Use globally at the top of pages.
+Responsive logic: Header remains sticky; desktop navigation collapses away on small screens.
+Code reference: source-code/components/Header.tsx
+
+Accessibility checklist
+- Semantic header, main, section, article and footer elements
+- Labels for search input
+- Descriptive image alt text
+- Visible focus indicators
+- Reduced-motion preference support
+- Touch-friendly controls
+- Strong color contrast between primary text and backgrounds
+
+Reusable project structure
+app/ = pages and global styles
+components/ = Atomic Design components
+data/ = content model
+public/ = static assets

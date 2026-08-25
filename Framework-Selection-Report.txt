@@ -1,0 +1,45 @@
+FRAMEWORK SELECTION REPORT
+Pangasinan Heritage Digital Showcase
+Activity 1.1
+
+1. Project Context
+The brief asks for a resilient, accessible, maintainable and high-performing heritage showcase optimized for 3G/4G mobile data, mobile-first layouts, modular architecture, WCAG 2.1 AA principles, and static/JAMstack-style deployment. The required comparison is between React Next.js 14 (App Router) and Vue Nuxt.js 3.
+
+2. Quantitative Decision Matrix
+Scale: 1 = weak, 5 = excellent. Weighted total = score × criterion weight.
+
+Criterion                         Weight   Next.js 14   Nuxt.js 3
+Bundle/performance                  25%       5          4
+Developer velocity                 15%       5          5
+Ecosystem maturity                 15%       5          4
+Learning curve                     10%       3          4
+Component architecture             10%       5          5
+Documentation/community             10%       5          5
+Project suitability                15%       5          4
+TOTAL                              100%      4.75       4.35
+
+3. Recommendation
+Select React with Next.js 14 App Router. It provides a strong component model, mature ecosystem, route-level architecture, and a static export path. Next.js static export can generate HTML per route and deploy to a static host; Server Components can be rendered during the build. This matches the showcase's content-first and low-data requirements.
+
+The supplied brief specifically names Next.js 14 and Nuxt.js 3. This report evaluates those requested versions rather than silently substituting newer framework versions.
+
+4. Criteria Discussion
+Bundle/performance: Next.js supports static export and route-based output, allowing the site to ship pre-rendered HTML/CSS/JS rather than requiring a request-time server. The implementation also keeps dependencies minimal and uses unoptimized external image URLs only as demonstration content.
+
+Developer velocity: React components can be composed as small reusable units. The project separates data, atoms, molecules, and organisms, making future pages easier to build.
+
+Ecosystem maturity: React and Next.js have a broad component and tooling ecosystem. This reduces implementation risk for an academic project that may later need maps, analytics, forms, or content integrations.
+
+Learning curve: Nuxt's Vue Single-File Components can be approachable. Next.js receives a slightly lower learning score here because App Router conventions and Server/Client Component boundaries require additional concepts.
+
+Component architecture: Both options are strong. The project uses React components that map directly to the Atomic Design levels required by the brief.
+
+Documentation/community: Both have extensive official documentation. The comparison therefore gives both a high score.
+
+Project suitability: Next.js wins because static export is explicitly supported and the requested assignment already specifies Next.js 14 App Router as Option A.
+
+5. Evidence and Current Note
+Next.js documentation states that output: 'export' generates an out directory containing static HTML/CSS/JS assets. The current Next.js documentation also explains that static export can be hosted on static infrastructure. Nuxt documentation likewise supports prerendering with nuxt generate. However, the current Nuxt documentation reports that Nuxt 3 reached end of life on July 31, 2026. This is a current lifecycle consideration, but the assignment itself requires comparing Nuxt.js 3, so the scoring above remains focused on the assignment's specified alternatives.
+
+6. Final Decision
+Next.js 14 (App Router) is the recommended framework for this deliverable because it best balances performance, maintainability, reusable component architecture, accessibility implementation, and static deployment suitability.
